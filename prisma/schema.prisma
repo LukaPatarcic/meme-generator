@@ -13,5 +13,8 @@ datasource db {
 model Memes {
     id Int @id @default(autoincrement())
     name String
-    picture String
+    picture_url String
+    width Int
+    height Int
+    box_count Int
 }
