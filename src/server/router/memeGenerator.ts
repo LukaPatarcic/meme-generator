@@ -1,7 +1,9 @@
+import { prisma } from '../db/client';
 import { createRouter } from './context';
 
-export const urlShortenRouter = createRouter().mutation('example', {
+export const urlShortenRouter = createRouter().query('getMemeImages', {
     async resolve() {
-        return 'Hello World';
+        const images = await prisma.memes.findMany();
+        return images;
     },
 });
